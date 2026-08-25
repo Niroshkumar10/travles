@@ -40,7 +40,7 @@ const FaqPage = lazy(() => import('@/pages/support/FaqPage'))
 const AboutPage = lazy(() => import('@/pages/about/AboutPage'))
 const NotFoundPage = lazy(() => import('@/pages/notFound/NotFoundPage'))
 
-export const router = createBrowserRouter([
+const routes = [
   {
     element: <PublicLayout />,
     children: [
@@ -95,4 +95,6 @@ export const router = createBrowserRouter([
       { path: '/booking/confirmation/:bookingId', element: <ConfirmationPage /> },
     ],
   },
-])
+]
+
+export const router = createBrowserRouter(routes, { basename: import.meta.env.BASE_URL })
